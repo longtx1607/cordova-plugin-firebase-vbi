@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "342552103066",
+    "firebase_url": "https://vbi4sales.firebaseio.com",
+    "project_id": "vbi4sales",
+    "storage_bucket": "vbi4sales.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342552103066:android:3b474a94b709d7d0",
+        "android_client_info": {
+          "package_name": "com.vbi.vbi4sales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342552103066-lh69b8v4nijhf4ln56qpebi1a88065ab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQlae_f2c-oirTzKVNIRqq28_ale0UXx8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
