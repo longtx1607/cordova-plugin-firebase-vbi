@@ -110,11 +110,23 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
             boolean showNotification = (FirebasePlugin.inBackground() || !FirebasePlugin.hasNotificationsCallback()) && (!TextUtils.isEmpty(text) || !TextUtils.isEmpty(title));
             sendNotification(id, title, text, data, showNotification, sound, lights);
         }
-		
-		
-		 Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(i);
+
+        Class mainActivity = null;
+        Context context = getApplicationContext();
+        String  packageName = context.getPackageName();
+        Intent  launchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+        String  className = launchIntent.getComponent().getClassName();
+        try {
+            //loading the Main Activity to not import it in the plugin
+            mainActivity = Class.forName(className);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Intent openActivityIntent = new Intent(context, mainActivity);
+
+
+        openActivityIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(openActivityIntent);
 
 		
     }
