@@ -2,13 +2,10 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
-		  google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:+'
         classpath 'com.google.gms:google-services:4.1.0'
-		classpath 'io.fabric.tools:gradle:1.+'
-
     }
 }
 repositories {
@@ -16,7 +13,6 @@ repositories {
     maven {
         url "https://maven.google.com"
     }
-	  maven { url 'https://maven.fabric.io/public' }
 }
 
 dependencies {
@@ -28,5 +24,5 @@ dependencies {
 }
 
 cdvPluginPostBuildExtras.add({
-    apply plugin: 'io.fabric'
+   
 })
