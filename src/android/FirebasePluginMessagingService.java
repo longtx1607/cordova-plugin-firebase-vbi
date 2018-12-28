@@ -111,10 +111,14 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
             sendNotification(id, title, text, data, showNotification, sound, lights);
         }
 		
+		   Context context = cordova.getActivity()
+                    .getApplicationContext();
+            Intent intent = new Intent(context, MainActivity.class);
+			 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        
+            cordova.getActivity().startActivity(intent);
 		
-		 Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(i);
+       
 
 		
     }
