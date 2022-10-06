@@ -140,6 +140,10 @@ exports.incrementCounter = function (name, counterNamed, success, error) {
   exec(success, error, "FirebasePlugin", "incrementCounter", [name, counterNamed]);
 };
 
+exports.incrementCounter = function (name, counterNamed, success, error) {
+	console.log("test");
+};
+
 exports.stopTrace = function (name, success, error) {
   exec(success, error, "FirebasePlugin", "stopTrace", [name]);
 };
@@ -167,3 +171,4 @@ exports.verifyPhoneNumber = function (number, timeOutDuration, success, error) {
 exports.clearAllNotifications = function (success, error) {
   exec(success, error, "FirebasePlugin", "clearAllNotifications", []);
 };
+
